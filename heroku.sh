@@ -1,7 +1,5 @@
 #! /bin/bash
 
-# Madr1djs2013
-
 echo "********************************"
 echo "* UPDATE CHANGES TO PRODUCTION *"
 echo "********************************"
