@@ -4,6 +4,8 @@ echo "********************************"
 echo "* UPDATE CHANGES TO PRODUCTION *"
 echo "********************************"
 
+touch heroku.sh
+
 git diff | grep +++
 
 read -p "You want to continue? [y|*N*]: " OPTION
