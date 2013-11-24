@@ -152,5 +152,5 @@ module.exports = function(app) {
     AddRoute.put(    app,                     '/resource/:resourceId',
                      updateResource,          'updateResource');
     AddRoute.delete( app,                     '/resource/:resourceId',
-                     deleteResource,          'deleteResource)');
+                     deleteResource,          'deleteResource');
 }
