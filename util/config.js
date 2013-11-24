@@ -1,6 +1,3 @@
-
-madridjswebbackend
-
 var development = {
 
     environment             : 'development',
