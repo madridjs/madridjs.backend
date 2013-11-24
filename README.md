@@ -3,7 +3,9 @@ MadridJS web backend
 
 Just a RESTfull API.
 
-[http://madridjs-web-backend.herokuapp.com/](http://madridjs-web-backend.herokuapp.com/)
+# HEROKU
+
+- URL: [http://madridjs-web-backend.herokuapp.com/](http://madridjs-web-backend.herokuapp.com/)
 
 - method "GET" to "/" to execute "getHelp"
 
@@ -30,12 +32,14 @@ var jobSchema = new Schema({
 
 # MEETUPS
 
+~~~
 var meetupSchema = new Schema({
     title: { type: String, required: true, match: /^(.){3,100}$/ },
     desc:  { type: String, required: true, match: /^(.){3,1000}$/ },
     date:  { type: Date,   required: true },
     url:   { type: String, required: true, match: /^(http|https):\/\/[^ "]+$/ }
 });
+~~~
 
 - method "GET" to "/meetup" to execute "findMeetups"
 - method "GET" to "/meetup/:meetupId" to execute "findMeetup"
@@ -44,6 +48,17 @@ var meetupSchema = new Schema({
 - method "DELETE" to "/meetup/:meetupId" to execute "deleteMeetup"
 
 # RESOURCES
+
+~~~
+var resourceSchema = new Schema({
+    title:  { type: String,                required: true, match: /^(.){3,5}$/ },
+    desc:   { type: String,                required: true, match: /^(.){3,1000}$/ },
+    date:   { type: Date,                  required: true },
+    url:    { type: String,                required: true, match: /^(http|https):\/\/[^ "]+$/ },
+    type:   { type: String,                required: true, match: /^(video|image|slide)$/ },
+    meetup: { type: Schema.Types.ObjectId, required: true, ref: 'Meetup' }
+});
+~~~
 
 - method "GET" to "/resource" to execute "findResources"
 - method "GET" to "/meetup/:meetupId/resource" to execute "findResourcesByMeetupId"

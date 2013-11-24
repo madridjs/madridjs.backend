@@ -1,8 +1,8 @@
 #! /bin/bash
 
-echo "**********************************************"
-echo "* PUSH CHANGES TO GITHUB AND AFTER TO HEROKU *"
-echo "**********************************************"
+echo "**************************"
+echo "* PUSH CHANGES TO GITHUB *"
+echo "**************************"
 
 touch heroku.sh
 
@@ -16,8 +16,6 @@ if [ "$OPTION" == "y" ]; then
 
     git add . && \
     git commit -m "$MESSAGE" && \
-    git push && \
-    git push heroku master && \
-    heroku logs
+    git push
 
 fi
